@@ -18,25 +18,38 @@ typedef infoPlayer P;
 
 struct versus{
     string player1, player2;
+    int score1, score2;
 };
 
 typedef versus V;
 
+struct PlayersPairing{ //registro para el vector de puntos de eliminatorias
+    string playname;
+    int score;
+};
+
+typedef PlayersPairing Play;
+
 vector<infoPlayer> jornadas; //vector para jornadas
-vector<infoPlayer> eliminatorias; //vector para eliminatorias
+vector<infoPlayer> qualifiers; //vector para eliminatorias
+vector<PlayersPairing> qualifiersTable; //ordenar las eliminatorias por puntos
 queue<versus> games; //cola de partidas de eliminatorias
 
 //variables globales
-bool playeradd = false, pairingDone = false;
-int Around = 1, NumRandom[20], first = 0;
+bool playeradd = false, pairingDone = false, pairingPlayed = false;
+int Around = 1, NumRandom[20], first = 0, Around2 = 1;
 
-//como ordenar el vector segun los puntos
+//como ordenar el vector segun los puntos de las jornadas
 bool ordenando(P a, P b){
 	return a.points > b.points;
 }
+//como ordenar el vector de puntos de eliminatorias
+bool ordenando2(Play a, Play b){
+    return a.score > b.score;
+}
 
 //prototipos de funciones
-void AddPlayers(), scoreTable(), playRound(), FillingUpArray(), Pairing(), matches();
+void AddPlayers(), scoreTable(), playRound(), FillingUpArray(), Pairing(), matches(), scoreQualifiers();
 bool verifyNUM(int);
 
 int main(){
@@ -48,20 +61,22 @@ int main(){
 		int option = 0;
 		cout << "\nLIGA DE ALEATORIOS\n" << endl;
 		cout << "1-Jugar Jornada (" << Around << ")\n";
-        cout << "2-Jugar Eliminatoria\n";
+        cout << "2-Jugar Eliminatoria (" << Around2 << ")\n";
 		cout << "3-Tabla de posiciones de las Jornadas\n";
-        cout << "4-Emparejamientos de Eliminatorias\n";
-		cout << "5-Ingresar jugadores\n";
-		cout << "6-Salir\n";
+        cout << "4-Tabla de puntuaciones de las Eliminatorias\n";
+        cout << "5-Emparejamientos de Eliminatorias\n";
+		cout << "6-Ingresar jugadores\n";
+		cout << "7-Salir\n";
 		cout << "Opcion: "; cin >> option; cin.ignore();
 
 		switch(option){
 			case 1: playRound(); break;
             case 2: matches(); break; 
 			case 3: scoreTable(); break; //funcion de tablas de posiciones
-            case 4: Pairing(); break;  //emparejamiento de eliminatorias
-			case 5: AddPlayers(); break;
-			case 6: follow = false; break;
+            case 4: scoreQualifiers(); break; //puntuaciones de las qualifiers
+            case 5: Pairing(); break;  //emparejamiento de qualifiers
+			case 6: AddPlayers(); break;
+			case 7: follow = false; break;
 		}
 
 	}while(follow);
@@ -83,14 +98,14 @@ void AddPlayers(){
 			aPlayer.points = 0;
 			aPlayer.pointsFalse = 0;
 			jornadas.insert(jornadas.end(), aPlayer); //guardando info para jornadas
-            eliminatorias.insert(eliminatorias.end(), aPlayer); //guardando info para eliminatorias
+            qualifiers.insert(qualifiers.end(), aPlayer); //guardando info para qualifiers
 			k++;
 		}while(k < 20);
 		playeradd = true; //ya hay una liga iniciada
 	}
 
 }
-
+//tabla de puntuacion de jornadas
 void scoreTable(){
 
 	if(playeradd == false){
@@ -99,7 +114,7 @@ void scoreTable(){
 	else{
 
 		sort(jornadas.begin(), jornadas.end(), ordenando);
-
+        cout << "\nTABLA DE PUNTUACIONES DE LAS JORNADAS\n";
 		cout << "\nJugadores			Puntos\n" << endl;
 		for(int i = 0; i < jornadas.size(); i++){
 			cout << jornadas[i].name << "				" << jornadas[i].points << endl;
@@ -214,13 +229,16 @@ void Pairing(){
     else{
         if(first == 0){
             FillingUpArray();
-            cout << "\nLOS QUIPOS QUEDAN DE ESTA MANERA:\n" << endl;
+            cout << "\nLOS EQUIPOS QUEDAN DE ESTA MANERA:\n" << endl;
             do{
 
-                cout << eliminatorias[NumRandom[aux+aux]].name << " VS " << eliminatorias[NumRandom[aux+aux2]].name << endl;
+                cout << qualifiers[NumRandom[aux+aux]].name << " VS " << qualifiers[NumRandom[aux+aux2]].name << endl;
                 //guardando los nombre de las parejas
-                vs.player1 = eliminatorias[NumRandom[aux+aux]].name;
-                vs.player2 = eliminatorias[NumRandom[aux+aux2]].name;
+                vs.player1 = qualifiers[NumRandom[aux+aux]].name;
+                vs.player2 = qualifiers[NumRandom[aux+aux2]].name;
+                //puntuacion inicial de cada jugador
+                vs.score1 = 0;
+                vs.score2 = 0;
                 //metiendolos a una cola
                 games.push(vs);
 
@@ -234,10 +252,10 @@ void Pairing(){
             pairingDone = true;
         }
         else{
-            cout << "\nLOS QUIPOS QUEDAN DE ESTA MANERA:\n" << endl;
+            cout << "\nLOS EQUIPOS QUEDAN DE ESTA MANERA:\n" << endl;
             do{
 
-                cout << eliminatorias[NumRandom[aux+aux]].name << " VS " << eliminatorias[NumRandom[aux2+aux2]].name << endl;
+                cout << qualifiers[NumRandom[aux+aux]].name << " VS " << qualifiers[NumRandom[aux2+aux2]].name << endl;
                 aux++;
                 aux2++;
 
@@ -250,27 +268,105 @@ void Pairing(){
 
 }
 
-//partidos de eliminatorias
+//partidos de qualifiers
 void matches(){
     srand(time(NULL));
     queue<versus> temporary; //cola temporal
     V aux;
+    Play auxP1, auxP2;
     int x = 0, y = 0;
 
-	if(playeradd == false && pairingDone == false){
+	if(playeradd == false || pairingDone == false){
 		cout << "\nNO HAY UNA ELIMINATORIA INICIADA O NO HAY EMPAREJAMIENTOS!" << endl;
 	}
     else{
-        cout << "\nRESULTADOS DE LAS PARTIDAS DE ELIMINATORIA\n" << endl;
-        while(!games.empty()){
-            aux = games.front(); //sacamos los jugadores de la cola
-            temporary.push(games.front()); //guardamos en la cola tamporal los jugadores
-            x = 1 + rand()% 9;
-            y = 1 + rand()% 9;
-            cout << aux.player1 << "\t" << x << " - " << y << "\t " << aux.player2 << endl; //se muestran los resultados
-            games.pop();
+        if(Around2 == 39){
+            cout << "\nLAS ELIMINATORIAS ACABARON!\n" << endl;
+            cout << "El ganador de las eliminatorias es: ";
+            sort(qualifiersTable.begin(), qualifiersTable.end(), ordenando2);
+            for(int i = 0; i < qualifiersTable.size(); i++){
+                cout << qualifiersTable[i].playname << " con " << qualifiersTable[i].score << " puntos" << endl;
+                break;
+            }
+            Around2 = 1;
+            //se reinician los puntos
+            for(int i = 0; i < qualifiersTable.size(); i++){
+                qualifiersTable[i].score = 0;
+            }
+            //se reinician los puntos de cada jugador de la cola
+            while(!games.empty()){ 
+                aux = games.front();
+                aux.score1 = 0;
+                aux.score2 = 0;
+                temporary.push(aux);
+                games.pop();
+            }
+            //se guardan los datos ya reiniciados de nuevo a la cola para otra eliminatoria
+            while(!temporary.empty()){
+                games.push(temporary.front());
+                temporary.pop();
+            }
+            
+        }
+        else{
+            cout << "\nRESULTADOS DE LAS PARTIDAS DE ELIMINATORIA " << Around2 << "\n" << endl;
+            if(!qualifiersTable.empty()){
+                    qualifiersTable.clear(); //se vacia el vector de eliminatorias para nuevos datos
+            }
+            while(!games.empty()){
+                aux = games.front(); //sacamos los jugadores de la cola
+
+                x = 1 + rand()% 9;
+                y = 1 + rand()% 9;
+                cout << aux.player1 << "\t" << x << " - " << y << "\t " << aux.player2 << endl; //se muestran los resultados
+                //puntuacion correspondiente para cada jugador
+                if(x > y) aux.score1 += 3;
+                else if(x < y) aux.score2 += 3;
+                else if(x == y){
+                    aux.score1 += 1;
+                    aux.score2 += 1;
+                }
+                //tomando los datos de cada jugador individualmente
+                auxP1.playname = aux.player1;
+                auxP1.score = aux.score1;
+                auxP2.playname = aux.player2;
+                auxP2.score = aux.score2;
+
+                temporary.push(aux); //guardamos en la cola tamporal los jugadores
+
+                qualifiersTable.insert(qualifiersTable.end(), auxP1); //guardando datos en el vector
+                qualifiersTable.insert(qualifiersTable.end(), auxP2); //guardando datos en el vector
+                    
+                games.pop();
+            }
+            //llenando nuevamente la cola original con los jugadores
+            while(!temporary.empty()){
+                games.push(temporary.front());
+                temporary.pop();
+            }
+            Around2++;
+            pairingPlayed = true;
         }
 
     }
 
+}
+
+//tabla de puntuaciones de las qualifiers
+void scoreQualifiers(){
+    
+	if(playeradd == false || pairingPlayed == false){
+		cout << "\nNO HAY UNA ELIMINATORIA INICIADA O NO SE HA JUGADO FASE DE ELIMINATORIA!" << endl;
+	}
+	else{
+
+		sort(qualifiersTable.begin(), qualifiersTable.end(), ordenando2);
+        //mostrando la table de puntos de las eliminatorias
+        cout << "\nTABLA DE PUNTUACIONES DE LAS ELIMINATORIAS\n";
+		cout << "\nJugadores			Puntos\n" << endl;
+		for(int i = 0; i < qualifiersTable.size(); i++){
+            cout << qualifiersTable[i].playname << "				" << qualifiersTable[i].score << endl;
+		}
+
+	}
 }
