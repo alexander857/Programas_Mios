@@ -21,8 +21,8 @@ vector<infoPlayer> jornadas, pairing, extra; //vector para jornadas y vector de 
 stack<infoPlayer> pila1, pila2, pilaVS1, pilaVS2;
 
 //variables globales
-bool playeraddJ = false, playeraddE = false;
-int Around = 1, Around2 = 1, playOffPairing = false;
+bool playeraddJ = false, playeraddE = false, playOffPairing = false;
+int Around = 1, Around2 = 1;
 
 //como ordenar el vector segun los puntos de las jornadas
 bool ordenando(P a, P b){
@@ -30,7 +30,7 @@ bool ordenando(P a, P b){
 }
 
 //prototipos de funciones
-void AddPlayers(), scoreTable(), playRound(), playoff(), pairingEquipment(), pairingProcess(), Mix(), removePlayer(int);
+void AddPlayers(), scoreTable(), playRound(), playoff(), pairingEquipment(), pairingProcess(), Mix(), removePlayer(int), scoreTableE();
 int menuCompetition();
 
 int main(){
@@ -55,7 +55,7 @@ int main(){
             case 'E': //jugar eliminatorias
             case 'e': playoff(); break;  
             case 'Y'://tabla de eliminatorias
-            case 'y': break;
+            case 'y': scoreTableE(); break;
             case 'P': //emparejamientos
             case 'p': pairingEquipment(); break;
 			case 'A': //ingresar jugadores
@@ -120,7 +120,6 @@ void AddPlayers(){
                     aPlayer.points = 0;
                     aPlayer.pointsFalse = 0;
                     aPlayer.ID = k + 1; //id del jugador
-                    cout << "ID: " << aPlayer.ID << endl;
                     pairing.insert(pairing.end(), aPlayer); //guardando info para eliminatorias
                     extra.insert(extra.end(), aPlayer); //guardando misma info en extra
                     k++;
@@ -166,12 +165,48 @@ void scoreTable(){
         cout << "\nTABLA DE PUNTUACIONES DE LAS JORNADAS\n";
 		cout << "\nJugadores			Puntos\n" << endl;
 		for(int i = 0; i < jornadas.size(); i++){
-			cout << jornadas[i].name << "				" << jornadas[i].points << endl;
-		}
+            if(i < 5) cout << "\033[34m" << jornadas[i].name << "				" << jornadas[i].points << "\033[0m" << endl;
+                
+			else if(i < 15) cout << "\033[33m" << jornadas[i].name << "				" << jornadas[i].points << "\033[0m" << endl;
+                
+            else if(i < 25) cout << "\033[32m" << jornadas[i].name << "				" << jornadas[i].points << "\033[0m" << endl;
 
+            else if(i < 33) cout << "\033[31m" << jornadas[i].name << "				" << jornadas[i].points << "\033[0m" << endl;
+		}
+        cout << "\033[36m----------------------------------------------------------\033[0m" <<endl;
+        cout << "\033[34m * \033[0m   Mejores Equipos de la Competencia" << endl;
+        cout << "\033[33m * \033[0m   Casi de los Mejores de la Competencia" << endl;
+        cout << "\033[32m * \033[0m   Equipos Regulares de la Competencia" << endl;
+        cout << "\033[31m * \033[0m   Equipos en Descenso" << endl;
 	}
 
 }
+//tabla de puntuaciones de eliminatorias
+void scoreTableE(){
+	if(playeraddE == false){
+		cout << "\nNO HAY UNA ELIMINATORIA INICIADA!" << endl;
+	}
+    else{
+        sort(pairing.begin(), pairing.end(), ordenando);
+        cout << "\nTABLA DE PUNTUACIONES DE LAS ELIMINATORIAS\n";
+		cout << "\nJugadores			Puntos\n" << endl;
+		for(int i = 0; i < pairing.size(); i++){
+            if(i < 5) cout << "\033[34m" << pairing[i].name << "				" << pairing[i].points << "\033[0m" << endl;
+                
+			else if(i < 15) cout << "\033[33m" << pairing[i].name << "				" << pairing[i].points << "\033[0m" << endl;
+                
+            else if(i < 25) cout << "\033[32m" << pairing[i].name << "				" << pairing[i].points << "\033[0m" << endl;
+
+            else if(i < 33) cout << "\033[31m" << pairing[i].name << "				" << pairing[i].points << "\033[0m" << endl;
+		}
+        cout << "\033[36m----------------------------------------------------------\033[0m" <<endl;
+        cout << "\033[34m * \033[0m   Mejores Equipos de la Competencia" << endl;
+        cout << "\033[33m * \033[0m   Casi de los Mejores de la Competencia" << endl;
+        cout << "\033[32m * \033[0m   Equipos Regulares de la Competencia" << endl;
+        cout << "\033[31m * \033[0m   Equipos en Descenso" << endl;
+    }
+}
+
 //FUNCION PARA JUGAR UNA JORNADA
 void playRound(){
 	srand(time(NULL));
@@ -256,8 +291,10 @@ void playoff(){
         cout << "\nRESULTADOS DE LA ELIMINATORIA " << Around2 << "\n" << endl;
         while(!pilaVS1.empty() || !pilaVS2.empty()){
             //se sacan unos numeros aleatorios
+
             x = 1 + rand()% 9;
             y = 1 + rand()% 9;
+
             //se muestra cada pareja y sus resultados
             cout << pilaVS1.top().name << " \t" << x << " - " << y << "  \t" << pilaVS2.top().name << endl;
             //guardo la info de los participantes
@@ -276,12 +313,13 @@ void playoff(){
             //se busca jugador 2 en el vector original
             for(auto iter = pairing.begin(); iter != pairing.end(); ++iter){
                 if(iter->ID == aux2.ID){
-                    if(x > y) iter->points += 3;
-                    else if(x < y) iter->points += 0;
+                    if(x < y) iter->points += 3;
+                    else if(x > y) iter->points += 0;
                     else if(x == y) iter->points += 1;
                     break;
                 }
             }
+
             //se eliminan de la pila los jugadores
             pilaVS1.pop();
             pilaVS2.pop();
@@ -349,6 +387,7 @@ void pairingProcess(){
 //genera numeros aleatorios para buscar ese jugador
 void Mix(){
     for(int i=0; i<100; i++) {
+            
         int n = rand() % 32 + 1;
     
         removePlayer(n);
