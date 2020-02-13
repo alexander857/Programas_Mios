@@ -18,11 +18,11 @@ struct infoPlayer{
 typedef infoPlayer P;
 
 vector<infoPlayer> jornadas, pairing, extra; //vector para jornadas y vector de eliminatorias
-stack<infoPlayer> pila1, pila2;
+stack<infoPlayer> pila1, pila2, pilaVS1, pilaVS2;
 
 //variables globales
 bool playeraddJ = false, playeraddE = false;
-int Around = 1, playOffPairing = false;
+int Around = 1, Around2 = 1, playOffPairing = false;
 
 //como ordenar el vector segun los puntos de las jornadas
 bool ordenando(P a, P b){
@@ -42,7 +42,7 @@ int main(){
 		char option = 0;
 		cout << "\n\033[36m--------------------JORNADAS Y ELIMINATORIAS FIFA SPORTS--------------------\033[0m\n" << endl;
 		cout << "J-Jugar Jornada (" << Around << ")\t\t\tX-Tabla de Posiciones Jornadas\n";
-        cout << "E-Jugar Eliminatoria\t\t\tY-Tabla de Posiciones Eliminatorias\n";
+        cout << "E-Jugar Eliminatoria (" << Around2 << ")\t\tY-Tabla de Posiciones Eliminatorias\n";
 		cout << "P-Emparejamientos de Eliminatorias\tA-Ingresar Jugadores\n";
         cout << "S-Salir\n";
 		cout << "Opcion: "; cin >> option; cin.ignore();
@@ -70,6 +70,20 @@ int main(){
 	return 0;
 }
 
+//elegir tipo de competencia para los jugadores
+int menuCompetition(){
+
+    int option;
+
+    while(option < 1 || option > 4){
+        //se pide el tipo decompetencia
+        cout << "\n\033[35m----------TIPO DE COMPETENCIA A JUGAR----------\033[0m\n" << endl;
+        cout << "1-Liga de jornadas\t3-Ambas competencias\n2-Eliminatorias\t\t4-Salir\n";
+        cout << "\nOpcion: "; cin >> option; cin.ignore();
+    }
+    return option;
+}
+
 void AddPlayers(){
 	P aPlayer;
 	int k = 0, option = 0, typeCompetition = 0;
@@ -88,6 +102,7 @@ void AddPlayers(){
                     cout << "Ingrese ID del jugador: "; getline(cin, aPlayer.name);
                     aPlayer.points = 0;
                     aPlayer.pointsFalse = 0;
+                    aPlayer.ID = k + 1;
                     jornadas.insert(jornadas.end(), aPlayer); //guardando info para jornadas
                     k++;
                 }while(k < 20);
@@ -99,16 +114,17 @@ void AddPlayers(){
                 cout << "\nYa hay una eliminatoria iniciada, podra ingresar nuevos jugadores cuando acabe!" << endl;
             }
             else{
-                cout << "\nOBLIGATORIAMENTE TIENE QUE SER 20 JUGADORES!\n\n" << endl;
+                cout << "\nOBLIGATORIAMENTE TIENE QUE SER 32 JUGADORES!\n\n" << endl;
                 do{
                     cout << "Ingrese ID del jugador: "; getline(cin, aPlayer.name);
                     aPlayer.points = 0;
                     aPlayer.pointsFalse = 0;
                     aPlayer.ID = k + 1; //id del jugador
+                    cout << "ID: " << aPlayer.ID << endl;
                     pairing.insert(pairing.end(), aPlayer); //guardando info para eliminatorias
                     extra.insert(extra.end(), aPlayer); //guardando misma info en extra
                     k++;
-                }while(k < 20);
+                }while(k < 32);
                 playeraddE = true; //ya hay una eliminatoria iniciada
             }
         break;
@@ -117,15 +133,20 @@ void AddPlayers(){
                 cout << "\nPUEDE QUE HAYA UNA ELIMINATORIA, UNA JORNADA O AMBAS INICIADA, INTENTELO CUANDO ACABEN!" << endl;
             }
             else{
-                cout << "\nOBLIGATORIAMENTE TIENE QUE SER 20 JUGADORES!\n\n" << endl;
+                cout << "\nINGRESE 32 JUGADORES, 12 DE ELLOS SOLO ESTARAN EN ELIMINATORIAS!\n\n" << endl;
                 do{
                     cout << "Ingrese ID del jugador: "; getline(cin, aPlayer.name);
                     aPlayer.points = 0;
                     aPlayer.pointsFalse = 0;
-                    jornadas.insert(jornadas.end(), aPlayer); //guardando info para jornadas
+                    aPlayer.ID = k + 1;
+                    //para jornadas solo se guardan los primeros 20
+                    if(k < 20) jornadas.insert(jornadas.end(), aPlayer); //guardando info para jornadas
+                    
                     pairing.insert(pairing.end(), aPlayer); //guardando info para eliminatorias
+                    extra.insert(extra.end(), aPlayer); //guardando misma info en extra
                     k++;
-                }while(k < 20);
+                }while(k < 32);
+
                 playeraddE = true; //ya hay una eliminatoria iniciada
                 playeraddJ = true; //ya hay una jornada iniciada
             }
@@ -151,7 +172,7 @@ void scoreTable(){
 	}
 
 }
-
+//FUNCION PARA JUGAR UNA JORNADA
 void playRound(){
 	srand(time(NULL));
 	int LuckyNumber = 0;
@@ -219,22 +240,11 @@ void playRound(){
 	}
 }
 
-//elegir tipo de competencia para los jugadores
-int menuCompetition(){
-
-    int option;
-
-    while(option < 1 || option > 4){
-        //se pide el tipo decompetencia
-        cout << "\n\033[35m----------TIPO DE COMPETENCIA A JUGAR----------\033[0m\n" << endl;
-        cout << "1-Liga de jornadas\t3-Ambas competencias\n2-Eliminatorias\t\t4-Salir\n";
-        cout << "\nOpcion: "; cin >> option; cin.ignore();
-    }
-    return option;
-}
-
-//FUNCION DE ELIMINATORIA
+//FUNCION PARA JUGAR UNA ELIMINATORIA
 void playoff(){
+    srand(time(NULL));
+    int x = 0, y = 0;
+    P aux, aux2;
 
     //se verifica si se hizo ya el emparejamiento
     if(playOffPairing == false){
@@ -242,7 +252,43 @@ void playoff(){
     }
     else{
         //proceso de la funcion
+        //se juega una eliminatoria
+        cout << "\nRESULTADOS DE LA ELIMINATORIA " << Around2 << "\n" << endl;
+        while(!pilaVS1.empty() || !pilaVS2.empty()){
+            //se sacan unos numeros aleatorios
+            x = 1 + rand()% 9;
+            y = 1 + rand()% 9;
+            //se muestra cada pareja y sus resultados
+            cout << pilaVS1.top().name << " \t" << x << " - " << y << "  \t" << pilaVS2.top().name << endl;
+            //guardo la info de los participantes
+            aux = pilaVS1.top();
+            aux2 = pilaVS2.top();
+
+            //se busca jugador 1 en el vector original
+            for(auto iter = pairing.begin(); iter != pairing.end(); ++iter){
+                if(iter->ID == aux.ID){
+                    if(x > y) iter->points += 3;
+                    else if(x < y) iter->points += 0;
+                    else if(x == y) iter->points += 1;
+                    break;
+                }
+            }
+            //se busca jugador 2 en el vector original
+            for(auto iter = pairing.begin(); iter != pairing.end(); ++iter){
+                if(iter->ID == aux2.ID){
+                    if(x > y) iter->points += 3;
+                    else if(x < y) iter->points += 0;
+                    else if(x == y) iter->points += 1;
+                    break;
+                }
+            }
+            //se eliminan de la pila los jugadores
+            pilaVS1.pop();
+            pilaVS2.pop();
+        }
+
         playOffPairing = false;
+        Around2++;
     }
 }
 
@@ -257,7 +303,7 @@ void pairingEquipment(){
         //llamando la funcion que empareja los jugadores
         pairingProcess();
         //mostrando las parejas
-        cout << "\nASI QUEDAN LOS PARTIDOS PARA LA ELIMINATORIA\n" << endl;
+        cout << "\nASI QUEDAN LOS PARTIDOS PARA LA ELIMINATORIA " << Around2 << "\n" << endl;
         while(!pila1.empty() || !pila2.empty()){
             //se sacan los dos primeros nombres de los jugadores
             aux.name = pila1.top().name;
@@ -273,7 +319,7 @@ void pairingEquipment(){
     }
 
 }
-
+//proceso de emparejamiento
 void pairingProcess(){
     stack<P> pilaAssistant; //pila auxiliar
     P aux;
@@ -283,27 +329,32 @@ void pairingProcess(){
     //proceso de "barajear" los jugadores
     for(int i = 0; i < extra.size(); i++){
         aux.name = extra[i].name;
+        aux.ID = extra[i].ID;
+        aux.points = extra[i].points;
+        aux.pointsFalse = extra[i].pointsFalse;
         pilaAssistant.push(aux); //se guarda la info del jugador en la pila auxiliar
     }
 
     //GUARDANDO LOS JUGADORES DE LA PILA AUXILIAR EN OTRAS DOS PILAS
     while(!pilaAssistant.empty()){
         pila1.push(pilaAssistant.top()); //guardamos el primer dato de la pila aux en pila 1
+        pilaVS1.push(pilaAssistant.top()); //se guarda la info en la pila para jugar eliminatorias
         pilaAssistant.pop();
         pila2.push(pilaAssistant.top()); //guardamos el otro dato en la pila 2
+        pilaVS2.push(pilaAssistant.top()); //se guarda la info en la pila para jugar eliminatorias
         pilaAssistant.pop();
     }
-    
-}
 
+}
+//genera numeros aleatorios para buscar ese jugador
 void Mix(){
     for(int i=0; i<100; i++) {
-        int n = rand() % 20 + 1;
+        int n = rand() % 32 + 1;
     
         removePlayer(n);
     }
 }
-
+//se busca el jugador en el vector para eliminarlo y volver a guardarlo en otra posicion
 void removePlayer(int n){
     P aux;
     for(auto iter = extra.begin(); iter != extra.end(); ++iter){
@@ -316,5 +367,5 @@ void removePlayer(int n){
             break;
         }
     }
-    extra.insert(extra.end(), aux);
+    extra.insert(extra.end(), aux); //se guarda de nuevo el jugador
 }
