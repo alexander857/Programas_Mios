@@ -286,47 +286,67 @@ void playoff(){
         cout << "\nVISITE LA OPCION DE EMPAREJAMIENTO PRIMERO!" << endl;
     }
     else{
-        //proceso de la funcion
-        //se juega una eliminatoria
-        cout << "\nRESULTADOS DE LA ELIMINATORIA " << Around2 << "\n" << endl;
-        while(!pilaVS1.empty() || !pilaVS2.empty()){
-            //se sacan unos numeros aleatorios
+        if(Around2 == 39){
+            cout << "\nLAS ELIMINATORIAS TERMINARON, EL GANADOR DE LA TEMPORADA ES:\n" << endl;
+            sort(pairing.begin(), pairing.end(), ordenando);
 
-            x = 1 + rand()% 9;
-            y = 1 + rand()% 9;
-
-            //se muestra cada pareja y sus resultados
-            cout << pilaVS1.top().name << " \t" << x << " - " << y << "  \t" << pilaVS2.top().name << endl;
-            //guardo la info de los participantes
-            aux = pilaVS1.top();
-            aux2 = pilaVS2.top();
-
-            //se busca jugador 1 en el vector original
-            for(auto iter = pairing.begin(); iter != pairing.end(); ++iter){
-                if(iter->ID == aux.ID){
-                    if(x > y) iter->points += 3;
-                    else if(x < y) iter->points += 0;
-                    else if(x == y) iter->points += 1;
-                    break;
-                }
+            for(int i = 0; i < pairing.size(); i++){
+                cout << pairing[i].name << " con " << pairing[i].points << " puntos" << endl;
+                break;
             }
-            //se busca jugador 2 en el vector original
-            for(auto iter = pairing.begin(); iter != pairing.end(); ++iter){
-                if(iter->ID == aux2.ID){
-                    if(x < y) iter->points += 3;
-                    else if(x > y) iter->points += 0;
-                    else if(x == y) iter->points += 1;
-                    break;
+            //se reinicia todo para otras eliminatorias
+            playeraddE = false;
+            pairing.clear();
+            extra.clear();
+            Around2 = 1;
+            playOffPairing = false;
+        }
+        else{
+
+            //proceso de la funcion
+            //se juega una eliminatoria
+            cout << "\nRESULTADOS DE LA ELIMINATORIA " << Around2 << "\n" << endl;
+            while(!pilaVS1.empty() || !pilaVS2.empty()){
+                //se sacan unos numeros aleatorios
+
+                x = 1 + rand()% 9;
+                y = 1 + rand()% 9;
+
+                //se muestra cada pareja y sus resultados
+                cout << pilaVS1.top().name << " \t" << x << " - " << y << "  \t" << pilaVS2.top().name << endl;
+                //guardo la info de los participantes
+                aux = pilaVS1.top();
+                aux2 = pilaVS2.top();
+
+                //se busca jugador 1 en el vector original
+                for(auto iter = pairing.begin(); iter != pairing.end(); ++iter){
+                    if(iter->ID == aux.ID){
+                        if(x > y) iter->points += 3;
+                        else if(x < y) iter->points += 0;
+                        else if(x == y) iter->points += 1;
+                        break;
+                    }
                 }
+                //se busca jugador 2 en el vector original
+                for(auto iter = pairing.begin(); iter != pairing.end(); ++iter){
+                    if(iter->ID == aux2.ID){
+                        if(x < y) iter->points += 3;
+                        else if(x > y) iter->points += 0;
+                        else if(x == y) iter->points += 1;
+                        break;
+                    }
+                }
+
+                //se eliminan de la pila los jugadores
+                pilaVS1.pop();
+                pilaVS2.pop();
             }
 
-            //se eliminan de la pila los jugadores
-            pilaVS1.pop();
-            pilaVS2.pop();
+            playOffPairing = false;
+            Around2++;
+
         }
 
-        playOffPairing = false;
-        Around2++;
     }
 }
 
@@ -334,26 +354,33 @@ void playoff(){
 void pairingEquipment(){
     P aux, aux2;
     //se verifica si se jugo una ronda de eliminatoria
-    if(playOffPairing == true){
-        cout << "\nJUEGUE UNA ELIMINATORIA ANTES!" << endl;
+    if(playOffPairing == true || playeraddE == false){
+        cout << "\nINGRESE LOS JUGADORES O JUEGUE UNA ELIMINATORIA ANTES!" << endl;
     }
     else{
-        //llamando la funcion que empareja los jugadores
-        pairingProcess();
-        //mostrando las parejas
-        cout << "\nASI QUEDAN LOS PARTIDOS PARA LA ELIMINATORIA " << Around2 << "\n" << endl;
-        while(!pila1.empty() || !pila2.empty()){
-            //se sacan los dos primeros nombres de los jugadores
-            aux.name = pila1.top().name;
-            aux2.name = pila2.top().name;
-            //se eliminan de las pilas esos nombres
-            pila1.pop();
-            pila2.pop();
-            //se muestran los nombres
-            cout << aux.name << "\tVS\t" << aux2.name << endl;
+        if(Around2 == 39){
+            cout << "\nLAS ELIMINATORIAS ACABARON, INGRESE MAS JUGADORES" << endl;
+            playOffPairing = true;
+        }
+        else{
+            //llamando la funcion que empareja los jugadores
+            pairingProcess();
+            //mostrando las parejas
+            cout << "\nASI QUEDAN LOS PARTIDOS PARA LA ELIMINATORIA " << Around2 << "\n" << endl;
+            while(!pila1.empty() || !pila2.empty()){
+                //se sacan los dos primeros nombres de los jugadores
+                aux.name = pila1.top().name;
+                aux2.name = pila2.top().name;
+                //se eliminan de las pilas esos nombres
+                pila1.pop();
+                pila2.pop();
+                //se muestran los nombres
+                cout << aux.name << "\tVS\t" << aux2.name << endl;
+            }
+
+            playOffPairing = true;
         }
 
-        playOffPairing = true;
     }
 
 }
