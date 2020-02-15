@@ -459,7 +459,7 @@ void pairingProcess(){
 //genera numeros aleatorios para buscar ese jugador eliminatorias
 void Mix(){
 
-    for(int i=0; i<100; i++) {
+    for(int i  =0; i < 100; i++) {
 
         int n = rand() % removed + 1;
 
@@ -522,7 +522,7 @@ void pairingProcess2(){
     stack<P> pilaAssistant; //pila auxiliar
     P aux;
 
-    Mix();
+    Mix2();
     //proceso de "barajear" los jugadores
     for(int i = 0; i < jornadas.size(); i++){
             aux.name = jornadas[i].name;
@@ -547,7 +547,7 @@ void pairingProcess2(){
 
 //aleatorios de las jornadas
 void Mix2(){
-    for(int i=0; i<100; i++) {
+    for(int i = 0; i < 100; i++) {
             
         int n = rand() % 20 + 1;
     
