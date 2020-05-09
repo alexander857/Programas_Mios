@@ -1,0 +1,10 @@
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\Desactivar\bin\Debug\Desactivar.exe.config
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\Desactivar\bin\Debug\Desactivar.exe
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\Desactivar\bin\Debug\Desactivar.pdb
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\Desactivar\obj\Debug\Desactivar.csprojAssemblyReference.cache
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\Desactivar\obj\Debug\Desactivar.Properties.Resources.resources
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\Desactivar\obj\Debug\Desactivar.csproj.GenerateResource.cache
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\Desactivar\obj\Debug\Desactivar.exe
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\Desactivar\obj\Debug\Desactivar.pdb
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\Desactivar\obj\Debug\Desactivar.Form1.resources
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\Desactivar\obj\Debug\Desactivar.Deactivate.resources
