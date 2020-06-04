@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Zair Alexander Ortíz\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Zair Alexander Ortíz\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_PokemonCollection.-814822337.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\PokemonCollection" t="IncludeRecursive">
+      <e p="App.config" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Controlator" t="Include">
+        <e p="CoachDAO.cs" t="Include" />
+        <e p="ConnectionBDD.cs" t="Include" />
+        <e p="PokebolaDAO.cs" t="Include" />
+        <e p="PokemonDAO.cs" t="Include" />
+        <e p="PokemonUnlokedDAO.cs" t="Include" />
+        <e p="TypePokebolaDAO.cs" t="Include" />
+        <e p="TypePokemonDAO.cs" t="Include" />
+      </e>
+      <e p="Model" t="Include">
+        <e p="Coach.cs" t="Include" />
+        <e p="Pokebola.cs" t="Include" />
+        <e p="Pokemon.cs" t="Include" />
+        <e p="PokemonUnlocked.cs" t="Include" />
+        <e p="TypePokebola.cs" t="Include" />
+        <e p="TypePokemon.cs" t="Include" />
+        <e p="WeaknessesOrStrengths.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="packages.config" t="Include" />
+      <e p="PokemonCollection.csproj" t="IncludeRecursive" />
+      <e p="PokemonCollection.sln" t="IncludeFlat" />
+      <e p="Program.cs" t="Include" />
+      <e p="Properties" t="Include">
+        <e p="AssemblyInfo.cs" t="Include" />
+        <e p="Resources.Designer.cs" t="Include" />
+        <e p="Resources.resx" t="Include" />
+        <e p="Settings.Designer.cs" t="Include" />
+        <e p="Settings.settings" t="Include" />
+      </e>
+      <e p="Resources" t="Include">
+        <e p="corona.png" t="Include" />
+        <e p="derrotas.png" t="Include" />
+        <e p="entrenador.png" t="Include" />
+        <e p="estrella.png" t="Include" />
+        <e p="estrellaNormal.png" t="Include" />
+        <e p="fondoBatalla.png" t="Include" />
+        <e p="mochila.png" t="Include" />
+        <e p="moneda.png" t="Include" />
+        <e p="nombre.png" t="Include" />
+        <e p="Pokebola1.png" t="Include" />
+        <e p="Pokebola2.png" t="Include" />
+        <e p="Pokebola3.png" t="Include" />
+        <e p="Pokebola4.png" t="Include" />
+        <e p="Pokebola5.png" t="Include" />
+      </e>
+      <e p="View" t="Include">
+        <e p="Form1.cs" t="Include" />
+        <e p="Form1.Designer.cs" t="Include" />
+        <e p="Form1.resx" t="Include" />
+        <e p="Login.cs" t="Include" />
+        <e p="Login.Designer.cs" t="Include" />
+        <e p="Login.resx" t="Include" />
+        <e p="Registry.cs" t="Include" />
+        <e p="Registry.Designer.cs" t="Include" />
+        <e p="Registry.resx" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>
