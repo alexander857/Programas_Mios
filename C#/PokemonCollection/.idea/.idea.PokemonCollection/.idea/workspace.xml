@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0a0a92e6-c9f4-42bb-bf17-8c1d533b0f22" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PokemonCollection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PokemonCollection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controlator/CoachDAO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controlator/CoachDAO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controlator/PokebolaDAO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controlator/PokebolaDAO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controlator/PokemonDAO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controlator/PokemonDAO.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/Form1.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/Form1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/PokemonCollection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/PokemonCollection.exe" afterDir="false" />
@@ -89,9 +86,9 @@
         <option value="$PROJECT_DIR$/Controlator/PokemonUnlokedDAO.cs" />
         <option value="$PROJECT_DIR$/Model/WeaknessesOrStrengths.cs" />
         <option value="$PROJECT_DIR$/Controlator/PokemonDAO.cs" />
-        <option value="$PROJECT_DIR$/View/Form1.cs" />
         <option value="$PROJECT_DIR$/Controlator/PokebolaDAO.cs" />
         <option value="$PROJECT_DIR$/Controlator/CoachDAO.cs" />
+        <option value="$PROJECT_DIR$/View/Form1.cs" />
       </list>
     </option>
   </component>
@@ -166,7 +163,8 @@
       <workItem from="1591236189439" duration="14390000" />
       <workItem from="1591251166619" duration="2007000" />
       <workItem from="1591254181332" duration="320000" />
-      <workItem from="1591296427615" duration="11759000" />
+      <workItem from="1591296427615" duration="11938000" />
+      <workItem from="1591313148364" duration="217000" />
     </task>
     <servers />
   </component>
@@ -176,22 +174,22 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="WindowStateProjectService">
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1591312464120">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1591313365354">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591312464120" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1591312464120">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591313365354" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1591313365354">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591312464120" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1591312464120">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591313365354" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1591313365354">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591312464120" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1591312464120">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591313365354" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1591313365354">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591312464120" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591313365354" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1591244259686">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

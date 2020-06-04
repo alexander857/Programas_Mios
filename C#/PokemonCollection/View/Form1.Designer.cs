@@ -249,7 +249,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(
                 new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
             this.tableLayoutPanel2.ColumnStyles.Add(
-                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
+                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
             this.tableLayoutPanel2.Controls.Add(this.label7, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label8, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.label12, 0, 5);
@@ -314,7 +314,7 @@
             this.label7.ForeColor = System.Drawing.Color.SpringGreen;
             this.label7.Location = new System.Drawing.Point(3, 36);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(148, 36);
+            this.label7.Size = new System.Drawing.Size(147, 36);
             this.label7.TabIndex = 0;
             this.label7.Text = "NOMBRE:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -327,7 +327,7 @@
             this.label8.ForeColor = System.Drawing.Color.SpringGreen;
             this.label8.Location = new System.Drawing.Point(3, 108);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(148, 36);
+            this.label8.Size = new System.Drawing.Size(147, 36);
             this.label8.TabIndex = 1;
             this.label8.Text = "VIDA:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -340,7 +340,7 @@
             this.label12.ForeColor = System.Drawing.Color.SpringGreen;
             this.label12.Location = new System.Drawing.Point(3, 180);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(148, 36);
+            this.label12.Size = new System.Drawing.Size(147, 36);
             this.label12.TabIndex = 5;
             this.label12.Text = "TIPO:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -353,7 +353,7 @@
             this.label9.ForeColor = System.Drawing.Color.SpringGreen;
             this.label9.Location = new System.Drawing.Point(3, 252);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(148, 36);
+            this.label9.Size = new System.Drawing.Size(147, 36);
             this.label9.TabIndex = 2;
             this.label9.Text = "DAÑO MAXIMO:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -362,11 +362,11 @@
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.picPokeUnloked, 3);
             this.picPokeUnloked.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picPokeUnloked.Location = new System.Drawing.Point(322, 2);
+            this.picPokeUnloked.Location = new System.Drawing.Point(320, 2);
             this.picPokeUnloked.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picPokeUnloked.Name = "picPokeUnloked";
             this.tableLayoutPanel2.SetRowSpan(this.picPokeUnloked, 7);
-            this.picPokeUnloked.Size = new System.Drawing.Size(267, 248);
+            this.picPokeUnloked.Size = new System.Drawing.Size(269, 248);
             this.picPokeUnloked.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPokeUnloked.TabIndex = 6;
             this.picPokeUnloked.TabStop = false;
@@ -385,7 +385,7 @@
                 System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (255)))),
                     ((int) (((byte) (255)))));
             this.btnEquipPokemon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEquipPokemon.Location = new System.Drawing.Point(342, 398);
+            this.btnEquipPokemon.Location = new System.Drawing.Point(339, 398);
             this.btnEquipPokemon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEquipPokemon.Name = "btnEquipPokemon";
             this.tableLayoutPanel2.SetRowSpan(this.btnEquipPokemon, 4);
@@ -400,9 +400,9 @@
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label13.Font = new System.Drawing.Font("Burbank Big Cd Bk", 12F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label13.Location = new System.Drawing.Point(322, 360);
+            this.label13.Location = new System.Drawing.Point(320, 360);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(267, 36);
+            this.label13.Size = new System.Drawing.Size(269, 36);
             this.label13.TabIndex = 7;
             this.label13.Text = "EQUIPAR POKEMON";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -414,9 +414,9 @@
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblNamePokemon.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))),
                 ((int) (((byte) (224)))), ((int) (((byte) (224)))));
-            this.lblNamePokemon.Location = new System.Drawing.Point(157, 36);
+            this.lblNamePokemon.Location = new System.Drawing.Point(156, 36);
             this.lblNamePokemon.Name = "lblNamePokemon";
-            this.lblNamePokemon.Size = new System.Drawing.Size(159, 36);
+            this.lblNamePokemon.Size = new System.Drawing.Size(158, 36);
             this.lblNamePokemon.TabIndex = 10;
             this.lblNamePokemon.Text = "Ninguno";
             this.lblNamePokemon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -428,9 +428,9 @@
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblLife.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))), ((int) (((byte) (224)))),
                 ((int) (((byte) (224)))));
-            this.lblLife.Location = new System.Drawing.Point(157, 108);
+            this.lblLife.Location = new System.Drawing.Point(156, 108);
             this.lblLife.Name = "lblLife";
-            this.lblLife.Size = new System.Drawing.Size(159, 36);
+            this.lblLife.Size = new System.Drawing.Size(158, 36);
             this.lblLife.TabIndex = 11;
             this.lblLife.Text = "0";
             this.lblLife.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -442,9 +442,9 @@
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblType.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))), ((int) (((byte) (224)))),
                 ((int) (((byte) (224)))));
-            this.lblType.Location = new System.Drawing.Point(157, 180);
+            this.lblType.Location = new System.Drawing.Point(156, 180);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(159, 36);
+            this.lblType.Size = new System.Drawing.Size(158, 36);
             this.lblType.TabIndex = 12;
             this.lblType.Text = "Ninguno";
             this.lblType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -456,9 +456,9 @@
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblMaxHurt.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))),
                 ((int) (((byte) (224)))), ((int) (((byte) (224)))));
-            this.lblMaxHurt.Location = new System.Drawing.Point(157, 252);
+            this.lblMaxHurt.Location = new System.Drawing.Point(156, 252);
             this.lblMaxHurt.Name = "lblMaxHurt";
-            this.lblMaxHurt.Size = new System.Drawing.Size(159, 36);
+            this.lblMaxHurt.Size = new System.Drawing.Size(158, 36);
             this.lblMaxHurt.TabIndex = 13;
             this.lblMaxHurt.Text = "0";
             this.lblMaxHurt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -471,7 +471,7 @@
             this.label10.ForeColor = System.Drawing.Color.SpringGreen;
             this.label10.Location = new System.Drawing.Point(3, 324);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(148, 36);
+            this.label10.Size = new System.Drawing.Size(147, 36);
             this.label10.TabIndex = 3;
             this.label10.Text = "DAÑO MINIMO:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -483,9 +483,9 @@
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblMinHurt.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))),
                 ((int) (((byte) (224)))), ((int) (((byte) (224)))));
-            this.lblMinHurt.Location = new System.Drawing.Point(157, 324);
+            this.lblMinHurt.Location = new System.Drawing.Point(156, 324);
             this.lblMinHurt.Name = "lblMinHurt";
-            this.lblMinHurt.Size = new System.Drawing.Size(159, 36);
+            this.lblMinHurt.Size = new System.Drawing.Size(158, 36);
             this.lblMinHurt.TabIndex = 14;
             this.lblMinHurt.Text = "0";
             this.lblMinHurt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -498,10 +498,10 @@
             this.cmbUnlokedPokemon.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.cmbUnlokedPokemon.FormattingEnabled = true;
-            this.cmbUnlokedPokemon.Location = new System.Drawing.Point(322, 290);
+            this.cmbUnlokedPokemon.Location = new System.Drawing.Point(320, 290);
             this.cmbUnlokedPokemon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbUnlokedPokemon.Name = "cmbUnlokedPokemon";
-            this.cmbUnlokedPokemon.Size = new System.Drawing.Size(267, 32);
+            this.cmbUnlokedPokemon.Size = new System.Drawing.Size(269, 32);
             this.cmbUnlokedPokemon.TabIndex = 17;
             // 
             // label14
@@ -513,7 +513,7 @@
             this.label14.Location = new System.Drawing.Point(3, 432);
             this.label14.Name = "label14";
             this.tableLayoutPanel2.SetRowSpan(this.label14, 2);
-            this.label14.Size = new System.Drawing.Size(148, 72);
+            this.label14.Size = new System.Drawing.Size(147, 72);
             this.label14.TabIndex = 9;
             this.label14.Text = "POKEMON EQUIPADO:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -525,10 +525,10 @@
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblEquipPokemon.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))),
                 ((int) (((byte) (224)))), ((int) (((byte) (224)))));
-            this.lblEquipPokemon.Location = new System.Drawing.Point(157, 432);
+            this.lblEquipPokemon.Location = new System.Drawing.Point(156, 432);
             this.lblEquipPokemon.Name = "lblEquipPokemon";
             this.tableLayoutPanel2.SetRowSpan(this.lblEquipPokemon, 2);
-            this.lblEquipPokemon.Size = new System.Drawing.Size(159, 72);
+            this.lblEquipPokemon.Size = new System.Drawing.Size(158, 72);
             this.lblEquipPokemon.TabIndex = 16;
             this.lblEquipPokemon.Text = "Ninguno";
             this.lblEquipPokemon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1468,7 +1468,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(
                 new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
             this.tableLayoutPanel5.ColumnStyles.Add(
-                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+                new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tableLayoutPanel5.Controls.Add(this.label11, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.label15, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.label16, 0, 5);
@@ -1536,7 +1536,7 @@
             this.label11.ForeColor = System.Drawing.Color.SpringGreen;
             this.label11.Location = new System.Drawing.Point(3, 36);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(144, 36);
+            this.label11.Size = new System.Drawing.Size(142, 36);
             this.label11.TabIndex = 0;
             this.label11.Text = "NOMBRE:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1549,7 +1549,7 @@
             this.label15.ForeColor = System.Drawing.Color.SpringGreen;
             this.label15.Location = new System.Drawing.Point(3, 108);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(144, 36);
+            this.label15.Size = new System.Drawing.Size(142, 36);
             this.label15.TabIndex = 1;
             this.label15.Text = "VIDA:";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1562,7 +1562,7 @@
             this.label16.ForeColor = System.Drawing.Color.SpringGreen;
             this.label16.Location = new System.Drawing.Point(3, 180);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(144, 36);
+            this.label16.Size = new System.Drawing.Size(142, 36);
             this.label16.TabIndex = 5;
             this.label16.Text = "TIPO:";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1575,7 +1575,7 @@
             this.label17.ForeColor = System.Drawing.Color.SpringGreen;
             this.label17.Location = new System.Drawing.Point(3, 252);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(144, 36);
+            this.label17.Size = new System.Drawing.Size(142, 36);
             this.label17.TabIndex = 2;
             this.label17.Text = "DAÑO MAXIMO:";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1585,11 +1585,11 @@
             this.tableLayoutPanel5.SetColumnSpan(this.picPokeStore, 3);
             this.picPokeStore.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picPokeStore.Image = ((System.Drawing.Image) (resources.GetObject("picPokeStore.Image")));
-            this.picPokeStore.Location = new System.Drawing.Point(298, 2);
+            this.picPokeStore.Location = new System.Drawing.Point(294, 2);
             this.picPokeStore.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picPokeStore.Name = "picPokeStore";
             this.tableLayoutPanel5.SetRowSpan(this.picPokeStore, 7);
-            this.picPokeStore.Size = new System.Drawing.Size(262, 248);
+            this.picPokeStore.Size = new System.Drawing.Size(266, 248);
             this.picPokeStore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPokeStore.TabIndex = 6;
             this.picPokeStore.TabStop = false;
@@ -1601,9 +1601,9 @@
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblPokeStore.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))),
                 ((int) (((byte) (224)))), ((int) (((byte) (224)))));
-            this.lblPokeStore.Location = new System.Drawing.Point(153, 36);
+            this.lblPokeStore.Location = new System.Drawing.Point(151, 36);
             this.lblPokeStore.Name = "lblPokeStore";
-            this.lblPokeStore.Size = new System.Drawing.Size(139, 36);
+            this.lblPokeStore.Size = new System.Drawing.Size(137, 36);
             this.lblPokeStore.TabIndex = 10;
             this.lblPokeStore.Text = "Miwtwo";
             this.lblPokeStore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1615,9 +1615,9 @@
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblLifeStore.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))),
                 ((int) (((byte) (224)))), ((int) (((byte) (224)))));
-            this.lblLifeStore.Location = new System.Drawing.Point(153, 108);
+            this.lblLifeStore.Location = new System.Drawing.Point(151, 108);
             this.lblLifeStore.Name = "lblLifeStore";
-            this.lblLifeStore.Size = new System.Drawing.Size(139, 36);
+            this.lblLifeStore.Size = new System.Drawing.Size(137, 36);
             this.lblLifeStore.TabIndex = 11;
             this.lblLifeStore.Text = "0";
             this.lblLifeStore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1629,9 +1629,9 @@
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblTypeStore.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))),
                 ((int) (((byte) (224)))), ((int) (((byte) (224)))));
-            this.lblTypeStore.Location = new System.Drawing.Point(153, 180);
+            this.lblTypeStore.Location = new System.Drawing.Point(151, 180);
             this.lblTypeStore.Name = "lblTypeStore";
-            this.lblTypeStore.Size = new System.Drawing.Size(139, 36);
+            this.lblTypeStore.Size = new System.Drawing.Size(137, 36);
             this.lblTypeStore.TabIndex = 12;
             this.lblTypeStore.Text = "0";
             this.lblTypeStore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1643,9 +1643,9 @@
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblMaxStore.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))),
                 ((int) (((byte) (224)))), ((int) (((byte) (224)))));
-            this.lblMaxStore.Location = new System.Drawing.Point(153, 252);
+            this.lblMaxStore.Location = new System.Drawing.Point(151, 252);
             this.lblMaxStore.Name = "lblMaxStore";
-            this.lblMaxStore.Size = new System.Drawing.Size(139, 36);
+            this.lblMaxStore.Size = new System.Drawing.Size(137, 36);
             this.lblMaxStore.TabIndex = 13;
             this.lblMaxStore.Text = "0";
             this.lblMaxStore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1658,7 +1658,7 @@
             this.label25.ForeColor = System.Drawing.Color.SpringGreen;
             this.label25.Location = new System.Drawing.Point(3, 324);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(144, 36);
+            this.label25.Size = new System.Drawing.Size(142, 36);
             this.label25.TabIndex = 3;
             this.label25.Text = "DAÑO MINIMO:";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1670,9 +1670,9 @@
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblMinStore.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))),
                 ((int) (((byte) (224)))), ((int) (((byte) (224)))));
-            this.lblMinStore.Location = new System.Drawing.Point(153, 324);
+            this.lblMinStore.Location = new System.Drawing.Point(151, 324);
             this.lblMinStore.Name = "lblMinStore";
-            this.lblMinStore.Size = new System.Drawing.Size(139, 36);
+            this.lblMinStore.Size = new System.Drawing.Size(137, 36);
             this.lblMinStore.TabIndex = 14;
             this.lblMinStore.Text = "0";
             this.lblMinStore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1685,7 +1685,7 @@
             this.label26.ForeColor = System.Drawing.Color.SpringGreen;
             this.label26.Location = new System.Drawing.Point(3, 396);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(144, 31);
+            this.label26.Size = new System.Drawing.Size(142, 31);
             this.label26.TabIndex = 18;
             this.label26.Text = "VALOR ESTELAR:";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1697,9 +1697,9 @@
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lvlValueStore.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))),
                 ((int) (((byte) (224)))), ((int) (((byte) (224)))));
-            this.lvlValueStore.Location = new System.Drawing.Point(153, 396);
+            this.lvlValueStore.Location = new System.Drawing.Point(151, 396);
             this.lvlValueStore.Name = "lvlValueStore";
-            this.lvlValueStore.Size = new System.Drawing.Size(139, 31);
+            this.lvlValueStore.Size = new System.Drawing.Size(137, 31);
             this.lvlValueStore.TabIndex = 19;
             this.lvlValueStore.Text = "0";
             this.lvlValueStore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1730,7 +1730,7 @@
             // label29
             // 
             this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label29.Location = new System.Drawing.Point(316, 252);
+            this.label29.Location = new System.Drawing.Point(312, 252);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(145, 36);
             this.label29.TabIndex = 22;
@@ -1745,17 +1745,17 @@
             this.cmbPokeStoreT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.cmbPokeStoreT.FormattingEnabled = true;
-            this.cmbPokeStoreT.Location = new System.Drawing.Point(298, 290);
+            this.cmbPokeStoreT.Location = new System.Drawing.Point(294, 290);
             this.cmbPokeStoreT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbPokeStoreT.Name = "cmbPokeStoreT";
-            this.cmbPokeStoreT.Size = new System.Drawing.Size(262, 32);
+            this.cmbPokeStoreT.Size = new System.Drawing.Size(266, 32);
             this.cmbPokeStoreT.TabIndex = 17;
             this.cmbPokeStoreT.SelectedIndexChanged += new System.EventHandler(this.cmbPokeStoreT_SelectedIndexChanged);
             // 
             // label30
             // 
             this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label30.Location = new System.Drawing.Point(316, 324);
+            this.label30.Location = new System.Drawing.Point(312, 324);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(145, 36);
             this.label30.TabIndex = 23;
@@ -1768,10 +1768,10 @@
             this.tableLayoutPanel5.SetColumnSpan(this.cmbPokeStoreN, 3);
             this.cmbPokeStoreN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbPokeStoreN.FormattingEnabled = true;
-            this.cmbPokeStoreN.Location = new System.Drawing.Point(298, 362);
+            this.cmbPokeStoreN.Location = new System.Drawing.Point(294, 362);
             this.cmbPokeStoreN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbPokeStoreN.Name = "cmbPokeStoreN";
-            this.cmbPokeStoreN.Size = new System.Drawing.Size(262, 31);
+            this.cmbPokeStoreN.Size = new System.Drawing.Size(266, 31);
             this.cmbPokeStoreN.TabIndex = 21;
             // 
             // btnViewPoke
@@ -1786,10 +1786,10 @@
             this.btnViewPoke.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F,
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnViewPoke.ForeColor = System.Drawing.Color.OldLace;
-            this.btnViewPoke.Location = new System.Drawing.Point(298, 429);
+            this.btnViewPoke.Location = new System.Drawing.Point(294, 429);
             this.btnViewPoke.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnViewPoke.Name = "btnViewPoke";
-            this.btnViewPoke.Size = new System.Drawing.Size(262, 39);
+            this.btnViewPoke.Size = new System.Drawing.Size(266, 39);
             this.btnViewPoke.TabIndex = 24;
             this.btnViewPoke.Text = "VER TODOS";
             this.btnViewPoke.UseVisualStyleBackColor = false;
@@ -2110,6 +2110,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pokemon";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);

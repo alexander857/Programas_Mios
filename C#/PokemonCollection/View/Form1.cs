@@ -51,6 +51,15 @@ namespace PokemonCollection
             cmbCantCoins.DataSource = new List<int>(){100,200,400,600,1000};
         }
         
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro que deseas salir del juego?", "Atencion", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+        
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -875,6 +884,7 @@ namespace PokemonCollection
             }
            
         }
+
         
     }
 }
