@@ -36,17 +36,15 @@ namespace PokemonCollection
             switch (a)
             {
                 case 1:
-                    return "Esta pokebola puede contener algun pokemon de los tipos: Normal, Roca.";
+                    return "Esta pokebola puede contener un pokemon de 30 diferentes.";
                 case 2:
-                    return "Esta pokebola puede contener algun pokemon de los tipos: Bicho, Planta, Agua, Volador.";
+                    return "Esta pokebola puede contener un pokemon de 60 diferentes.";
                 case 3:
-                    return "Esta pokebola puede contener algun pokemon de los tipos: Veneno, Fantasma, Psiquico, " +
-                           "Siniestro.";
+                    return "Esta pokebola puede contener un pokemon de 100 diferentes.";
                 case 4:
-                    return "Esta pokebola puede contener algun pokemon de los tipos: Hada, Acero, Fuego, Dragon, " +
-                           "Electrico, Hielo.";
+                    return "Esta pokebola puede contener un pokemon de 160 diferentes.";
                 case 5:
-                    return "Esta pokebola puede contener algun pokemon de los tipos: Lucha, Tierra.";
+                    return "Esta pokebola puede contener un pokemon de 260 diferentes.";
             }
 
             return "";

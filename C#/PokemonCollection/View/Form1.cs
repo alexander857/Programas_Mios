@@ -671,21 +671,21 @@ namespace PokemonCollection
             if (n == 1)
             {
                 //se hace el calculo de las nuevas cantidades que tendra el jugador
-                newStars = info.Stars + 5;
+                newStars = info.Stars + 2;
                 newPokestars = info.Pokestars + 1;
-                newCoins = info.Coins + 200;
+                newCoins = info.Coins + 100;
                 //se actualiza la base
                 CoachDAO.UpdateStars(newStars,unCoach.Id);
                 CoachDAO.UpdatePokestrellas(newPokestars,unCoach.Id);
                 CoachDAO.UpdateCoins(newCoins,unCoach.Id);
                 FillDataCoach();
             
-                MessageBox.Show("Tu premio: 5 Estrellas, 1 Pokestrellas y 200 monedas", "Exito", 
+                MessageBox.Show("Tu premio: 5 Estrellas, 1 Pokestrellas y 100 monedas", "Exito", 
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                newStars = info.Stars + 3;
+                newStars = info.Stars + 2;
                 //se actualiza la base
                 CoachDAO.UpdateStars(newStars,unCoach.Id);
                 FillDataCoach();
@@ -704,12 +704,12 @@ namespace PokemonCollection
             int pStars = Convert.ToInt32(cmbCantStar.Text);
 
             switch (cmbCantStar.SelectedItem)
-            {
-                case 2: price = 5; break;
-                case 5: price = 10; break;
-                case 10: price = 15; break;
-                case 20: price = 25; break;
-                case 40: price = 45; break;
+            {   //precios de las pokestrellas
+                case 2: price = 6; break;
+                case 5: price = 12; break;
+                case 10: price = 18; break;
+                case 20: price = 28; break;
+                case 40: price = 50; break;
                 default: break;
             }
 
@@ -739,12 +739,12 @@ namespace PokemonCollection
             int pCoins = Convert.ToInt32(cmbCantCoins.Text);
 
             switch (cmbCantCoins.SelectedItem)
-            {
-                case 100: price = 5; break;
-                case 200: price = 10; break;
-                case 400: price = 15; break;
-                case 600: price = 25; break;
-                case 1000: price = 45; break;
+            {  //precios de las monedas
+                case 100: price = 6; break;
+                case 200: price = 12; break;
+                case 400: price = 18; break;
+                case 600: price = 28; break;
+                case 1000: price = 50; break;
                 default: break;
             }
 
@@ -766,5 +766,115 @@ namespace PokemonCollection
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+        
+        //METODOS DE COMPRAR UNA POKEBOLA
+        //boton de comprar con pokestar
+        private void btnBuyBolaP_Click(object sender, EventArgs e)
+        {
+            BuyPokebolaProcess(0);
+        }
+        //boton de comprar con monedas
+        private void btnBuyBolaM_Click(object sender, EventArgs e)
+        {
+            BuyPokebolaProcess(1);
+        }
+        
+        //funcion del proceso de realizar la compra de pokebola y conseguir un pokemon aleatorio
+        public void BuyPokebolaProcess(int a)
+        {
+            string typePoke = "";
+            int idType = 0, limit = 0, value = 0;
+            Pokemon pokemon = null;
+            bool exist = false;
+            
+            if(a == 0)
+                value = Convert.ToInt32(lblStarBola.Text);
+            else 
+                value = Convert.ToInt32(lblCoinBola.Text);
+            
+            typePoke = cmbBolaStore.Text; //se toma el tipo de pokebola
+
+            try
+            {
+                if (a == 0 && info.Pokestars < value)
+                {
+                    MessageBox.Show("No tienes suficientes Pokestrellas", "Error", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+                else if (a == 1 && info.Coins < value)
+                {
+                    MessageBox.Show("No tienes suficientes Monedas", "Error", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+                else if(MessageBox.Show("Estas seguro de abrir la Pokebola tipo " + typePoke + "?", 
+                    "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                
+                    switch (typePoke)
+                    {
+                        case "Normal": limit = 31; break;
+                        case "Natural": limit = 61; break;
+                        case "Oscura": limit = 101; break;
+                        case "Brillante": limit = 161; break;
+                        case "Soldado": limit = 261; break;
+                    }
+            
+                    Random r = new Random();
+                    idType = r.Next(1, limit);
+                
+                    //se busca el pokemon por el id aleatorio el que le tocara al jugador cuando abrio la pokebola
+                    foreach (var p in PokemonDAO.getPokemons())
+                    {
+                        if (p.Pokedex == idType)
+                            pokemon = p;
+                    }
+                
+                    //se busca el pokemon aleatorio para ver si ya lo tiene o no
+                    foreach (var pok in PokemonUnlokedDAO.getPokeUnlocked(unCoach.Id))
+                    {
+                        if (pok.Pokedex == pokemon.Pokedex)
+                            exist = true; //ta tiene ese pokemon desbloqueado
+                    }
+
+                    //se descuentas las pokestrellas gastadas
+                    if (a == 0)
+                    {
+                        int newCant = info.Pokestars - value;
+                        CoachDAO.UpdatePokestrellas(newCant,unCoach.Id);
+                    }
+                    else
+                    {
+                        int newCant = info.Coins - value;
+                        CoachDAO.UpdateCoins(newCant,unCoach.Id);
+                    }  
+                
+                    //verificacion de que ya tiene al pokemon que salio en la pokebola
+                    if (exist)
+                    {
+                        MessageBox.Show("No tuvieste mucha suerte! Ya tienes a " + pokemon.Name + " desbloqueado",
+                            "Oh no!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        
+                        FillDataCoach();
+                    }
+                    else //si no existe en los desbloqueados, se guarda en esa lista
+                    {
+                        //se guarda el pokemon conseguido en la lista de desbloqueados
+                        PokemonUnlokedDAO.AddPokemonUnlocked(pokemon.Pokedex,unCoach.Id); 
+                    
+                        MessageBox.Show("Conseguiste a " + pokemon.Name + " tipo " + pokemon.Type, 
+                            "Recompensa",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        
+                        FillDataCoach();
+                        FillCMBUnlockedPokemon();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Ha ocurrido un problema!");
+            }
+           
+        }
+        
     }
 }

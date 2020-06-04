@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a0a92e6-c9f4-42bb-bf17-8c1d533b0f22" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PokemonCollection/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PokemonCollection/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PokemonCollection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PokemonCollection/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controlator/CoachDAO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controlator/CoachDAO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controlator/PokebolaDAO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controlator/PokebolaDAO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controlator/PokemonDAO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controlator/PokemonDAO.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/Form1.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/Form1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/PokemonCollection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/PokemonCollection.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/PokemonCollection.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/PokemonCollection.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/PokemonCollection.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PokemonCollection.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/PokemonCollection.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PokemonCollection.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/PokemonCollection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PokemonCollection.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/PokemonCollection.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PokemonCollection.pdb" afterDir="false" />
     </list>
@@ -81,17 +81,17 @@
         <option value="$PROJECT_DIR$/Model/Pokebola.cs" />
         <option value="$PROJECT_DIR$/Model/TypePokebola.cs" />
         <option value="$PROJECT_DIR$/Controlator/TypePokebolaDAO.cs" />
-        <option value="$PROJECT_DIR$/Controlator/PokebolaDAO.cs" />
         <option value="$PROJECT_DIR$/Model/TypePokemon.cs" />
         <option value="$PROJECT_DIR$/Controlator/TypePokemonDAO.cs" />
-        <option value="$PROJECT_DIR$/Controlator/PokemonDAO.cs" />
         <option value="$PROJECT_DIR$/View/Form1.Designer.cs" />
         <option value="$PROJECT_DIR$/Controlator/PokemonUnlocked.cs" />
         <option value="$PROJECT_DIR$/Model/PokemonUnlocked.cs" />
         <option value="$PROJECT_DIR$/Controlator/PokemonUnlokedDAO.cs" />
         <option value="$PROJECT_DIR$/Model/WeaknessesOrStrengths.cs" />
-        <option value="$PROJECT_DIR$/Controlator/CoachDAO.cs" />
+        <option value="$PROJECT_DIR$/Controlator/PokemonDAO.cs" />
         <option value="$PROJECT_DIR$/View/Form1.cs" />
+        <option value="$PROJECT_DIR$/Controlator/PokebolaDAO.cs" />
+        <option value="$PROJECT_DIR$/Controlator/CoachDAO.cs" />
       </list>
     </option>
   </component>
@@ -165,7 +165,8 @@
       <workItem from="1591229562995" duration="810000" />
       <workItem from="1591236189439" duration="14390000" />
       <workItem from="1591251166619" duration="2007000" />
-      <workItem from="1591254181332" duration="175000" />
+      <workItem from="1591254181332" duration="320000" />
+      <workItem from="1591296427615" duration="11759000" />
     </task>
     <servers />
   </component>
@@ -175,22 +176,22 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="WindowStateProjectService">
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1591254353720">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1591312464120">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591254353720" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1591254353719">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591312464120" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1591312464120">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591254353719" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1591254353719">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591312464120" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1591312464120">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591254353719" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1591254353720">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591312464120" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1591312464120">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591254353720" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591312464120" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1591244259686">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -259,10 +260,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="479" y="92" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1591224148969" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1591123700100">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1591307455533">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1591123700100" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1591307455533" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1591169654966">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -75,19 +75,19 @@ namespace PokemonCollection
         public static int getPokestars() //pokestrellas
         {
             Random r = new Random();
-            return r.Next(1, 3);
+            return r.Next(1, 2);
         }
         
         public static int getStars() //estrellas normales
         {
             Random ra = new Random();
-            return ra.Next(1, 5);
+            return ra.Next(1, 3);
         }
         
         public static int getCoins() //monedas de batalla
         {
             Random random = new Random();
-            return random.Next(50, 201);
+            return random.Next(50, 101);
         }
         
         //metodos de modificar monedas, estrellas y pokestrellas del jugador
