@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +20,7 @@ namespace PokemonCollection
         private List<Pokemon> pokemons;
         private int lifeJ, lifeR;
         private string AboutRival, AboutPlayer;
+        private SoundPlayer soundChangeTab;
         public Form1(Coach c)
         {
             lifeJ = lifeR = 0;
@@ -26,6 +28,8 @@ namespace PokemonCollection
             InitializeComponent();
             unCoach = c;
             pokemons = PokemonDAO.getPokemons();
+            //soundFindFruit = new SoundPlayer(Application.StartupPath + @"\sonidos\fruit.wav");
+            soundChangeTab = new SoundPlayer(Application.StartupPath + @"\Sounds\tururuZelda.wav");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -510,6 +514,7 @@ namespace PokemonCollection
         //evento de cambiar de pestaña en el tabControl
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            soundChangeTab.Play();
             if (tabControl1.SelectedTab.Name.Equals("tabBattle"))
             {
                 if(!battleStart)

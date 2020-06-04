@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Zair Alexander Ortíz\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Zair Alexander Ortíz\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_PokemonCollection.-814822337.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\PokemonCollection" t="IncludeRecursive">
+    <e p="C:\Users\Zair Alexander Ortíz\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_PokemonCollection.309725947.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Zair Alexander Ortíz\Desktop\Workspace\Programas_Mios\C#\PokemonCollection" t="IncludeRecursive">
       <e p="App.config" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="Controlator" t="Include">
