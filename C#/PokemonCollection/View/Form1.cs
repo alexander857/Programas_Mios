@@ -885,6 +885,26 @@ namespace PokemonCollection
            
         }
 
-        
+        //boton de poner una foto de perfil (Estetico. De prueba)
+        private void btnPhoto_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("La imagen volvera a la normalidad al volver a iniciar sesion. Desea continuar?",
+                "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        string image = openFileDialog1.FileName;
+                        picPlayerPerfil.Image = Image.FromFile(image);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ha ocurrido un problema!");
+                }
+            }
+            
+        }
     }
 }
