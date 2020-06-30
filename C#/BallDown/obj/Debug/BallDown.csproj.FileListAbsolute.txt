@@ -1,0 +1,11 @@
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\BallDown\bin\Debug\BallDown.exe.config
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\BallDown\bin\Debug\BallDown.exe
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\BallDown\bin\Debug\BallDown.pdb
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\BallDown\obj\Debug\BallDown.csprojAssemblyReference.cache
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\BallDown\obj\Debug\BallDown.Properties.Resources.resources
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\BallDown\obj\Debug\BallDown.csproj.GenerateResource.cache
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\BallDown\obj\Debug\BallDown.csproj.CoreCompileInputs.cache
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\BallDown\obj\Debug\BallDown.exe
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\BallDown\obj\Debug\BallDown.pdb
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\BallDown\obj\Debug\BallDown.BallDown.resources
+C:\Users\Zair Alexander Ortíz\Desktop\ProgramasC#Pruebas\BallDown\obj\Debug\BallDown.Form1.resources

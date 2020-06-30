@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0a0a92e6-c9f4-42bb-bf17-8c1d533b0f22" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PokemonCollection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PokemonCollection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/Form1.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Form1.resx" beforeDir="false" afterPath="$PROJECT_DIR$/View/Form1.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/PokemonCollection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/PokemonCollection.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/PokemonCollection.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/PokemonCollection.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/PokemonCollection.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PokemonCollection.csproj.GenerateResource.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/PokemonCollection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PokemonCollection.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/PokemonCollection.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/PokemonCollection.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,6 +160,8 @@
       <workItem from="1591296427615" duration="11938000" />
       <workItem from="1591313148364" duration="217000" />
       <workItem from="1591318498800" duration="2597000" />
+      <workItem from="1591475059142" duration="53000" />
+      <workItem from="1591908379178" duration="82000" />
     </task>
     <servers />
   </component>
