@@ -17,11 +17,22 @@ namespace BallDown
         //variables del juego propio
         public static bool pause = false, mainMusic = true;
 
+        //variables nombres de pb (img)
+        public static string wall = "wall1";
+        public static string ball = "Ball";
+
         //random para la posicion de las plataformas
         public static int PositionPlataform()
         {
             Random r = new Random();
             return r.Next(1, 9);
+        }
+
+        //random para las img de la pelota
+        public static int ImgBall()
+        {
+            Random r = new Random();
+            return r.Next(1, 4);
         }
     }
 }

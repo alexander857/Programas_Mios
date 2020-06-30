@@ -54,7 +54,7 @@ namespace BallDown
             player.Top = fireUp.Top + fireUp.Height;
             player.Left = fireUp.Left;
             
-            player.Image = Image.FromFile("../../Sprites/Ball.png");
+            player.Image = Image.FromFile($"../../Sprites/{DataGame.ball + "1"}.png");
             player.SizeMode = PictureBoxSizeMode.StretchImage;
             player.BackColor = Color.Transparent;
             
@@ -385,12 +385,15 @@ namespace BallDown
                 //se detienen los timer
                 timer1.Stop();
                 timer2.Stop();
+                musicBack.Stop();
 
                 //si selecciona volver a jugar reinicia el juego, sino, sale al menu principal
                 if (MessageBox.Show("Perdiste. " + lblscorePlayer.Text + "seg. Volver a jugar?", 
                     "Game Over", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Retry)
                 {
                     //se reinicia todo y empieza de nuevo
+                    musicBack.PlayLooping();
+
                     DataGame.timePlayer = 0;
                     lblscorePlayer.Text = "Tiempo: " + DataGame.timePlayer;
                 
@@ -413,7 +416,6 @@ namespace BallDown
                     UpdateLifes();
                     RestartPlayer();
                 
-                    musicBack.Stop();
                     mainMusic.PlayLooping();
                     Close();
                 }
@@ -458,7 +460,7 @@ namespace BallDown
             wallRight.Left = fireDown.Left + fireDown.Width;
             
             //imgs
-            wallLeft.Image = wallRight.Image = Image.FromFile("../../Sprites/wall.png");
+            wallLeft.Image = wallRight.Image = Image.FromFile($"../../Sprites/{DataGame.wall}.png");
             wallLeft.SizeMode = wallRight.SizeMode = PictureBoxSizeMode.StretchImage;
 
             Controls.Add(wallLeft);
@@ -478,7 +480,7 @@ namespace BallDown
             score.Top = 0;
             score.Left = (Width / 2) - score.Width / 2;
 
-            score.BackColor = Color.Gray;
+            score.BackColor = Color.BlueViolet;
             
             //corazones de vidas arreglo
             hearts = new PictureBox[DataGame.lifesPlayer];
@@ -595,6 +597,11 @@ namespace BallDown
             
             player.Top = fireUp.Top + fireUp.Height;
             player.Left = left;
+
+            //se le setea una img random
+            player.Image = Image.FromFile($"../../Sprites/{DataGame.ball + DataGame.ImgBall()}.png");
+            player.SizeMode = PictureBoxSizeMode.StretchImage;
+            player.BackColor = Color.Transparent;
         }
 
         //metodo para cambiar musica de fondo
