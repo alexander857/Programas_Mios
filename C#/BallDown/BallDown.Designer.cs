@@ -49,12 +49,11 @@ namespace BallDown
             // 
             // BallDown
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(890, 702);
+            this.ClientSize = new System.Drawing.Size(890, 562);
             this.ControlBox = false;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "BallDown";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -62,6 +61,7 @@ namespace BallDown
             this.Load += new System.EventHandler(this.BallDown_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BallDown_KeyDown);
             this.ResumeLayout(false);
+
         }
 
         #endregion

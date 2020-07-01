@@ -10,12 +10,14 @@ namespace BallDown
         public static int contPlataformLife = 0;
 
         //variables usadas para el jugador
-        public static int timePlayer = 0, speedPlayer = 20, movePlayer = 70;
-        public static int time = 0, movePlayerSlow = 20, lifesPlayer = 3;
+        public static int timePlayer = 0, lifesPlayer = 3, time = 0; 
+        public static int speedPlayer = 20, movePlayer = 70, movePlayerSlow = 20;
+        //public static int contTimeTruce = 20;
         public static bool playerDown = true;
 
         //variables del juego propio
         public static bool pause = false, mainMusic = true;
+        public static bool Truce = true;
 
         //variables nombres de pb (img)
         public static string wall = "wall1";

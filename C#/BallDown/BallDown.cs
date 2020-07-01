@@ -51,8 +51,8 @@ namespace BallDown
             
             player.Height = player.Width = 20;
             
-            player.Top = fireUp.Top + fireUp.Height;
-            player.Left = fireUp.Left;
+            player.Top = fireUp.Top + (fireUp.Height * 5);
+            player.Left = fireUp.Left + (fireUp.Width / 2);
             
             player.Image = Image.FromFile($"../../Sprites/{DataGame.ball + "1"}.png");
             player.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -242,19 +242,28 @@ namespace BallDown
                     //si choca con una peligrosa, pierde vida y si son 0, pierde el la partida
                     if (plataform.Tag.Equals("peligrosa"))
                     {
-                        DataGame.lifesPlayer--;
-                        UpdateLifes();
-                        
-                        if(DataGame.lifesPlayer <= 0)
-                            GameOver();
+                        //si la tregua es false, perdera vida sino no, hasta que se posicione en una plataforma normal
+                        if (!DataGame.Truce)
+                        {
+                            DataGame.lifesPlayer--;
+                            UpdateLifes();
 
-                        RestartPlayer();
-                        return;
+                            if (DataGame.lifesPlayer <= 0)
+                                GameOver();
+
+                            RestartPlayer();
+                            return;
+                        }
+ 
                     }
-                    
-                    //si la plataforma no era peligrosa, se queda en ella tomando sus coordenadas
-                    DataGame.playerDown = false;
-                    player.Top = plataform.Top - player.Height - 10;
+                    else
+                    {
+                        //si la plataforma no era peligrosa, se queda en ella tomando sus coordenadas
+                        DataGame.playerDown = false;
+                        player.Top = plataform.Top - player.Height - 10;
+                        DataGame.Truce = false;
+                    }
+                   
                 }
                 else
                 {
@@ -274,6 +283,7 @@ namespace BallDown
                     GameOver();
 
                 RestartPlayer();
+                
             }
 
         }
@@ -382,6 +392,7 @@ namespace BallDown
         {
             try
             {
+                
                 //se detienen los timer
                 timer1.Stop();
                 timer2.Stop();
@@ -592,11 +603,13 @@ namespace BallDown
         private void RestartPlayer()
         {
             //se coloca el jugador en una posicion random
-            Random r = new Random();
-            int left = r.Next(fireUp.Left + 1, fireUp.Left + fireUp.Width);
-            
-            player.Top = fireUp.Top + fireUp.Height;
-            player.Left = left;
+            /*Random r = new Random();
+             int left = r.Next(fireUp.Left + 1, fireUp.Left + fireUp.Width);*/
+
+            DataGame.Truce = true;
+
+            player.Top = fireUp.Top + (fireUp.Height * 5);
+            player.Left = fireUp.Left + (fireUp.Width / 2);
 
             //se le setea una img random
             player.Image = Image.FromFile($"../../Sprites/{DataGame.ball + DataGame.ImgBall()}.png");
