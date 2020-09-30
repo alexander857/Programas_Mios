@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a0a92e6-c9f4-42bb-bf17-8c1d533b0f22" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PokemonCollection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PokemonCollection/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0a0a92e6-c9f4-42bb-bf17-8c1d533b0f22" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,6 +160,7 @@
       <workItem from="1591318498800" duration="2597000" />
       <workItem from="1591475059142" duration="53000" />
       <workItem from="1591908379178" duration="82000" />
+      <workItem from="1595457934740" duration="24000" />
     </task>
     <servers />
   </component>
