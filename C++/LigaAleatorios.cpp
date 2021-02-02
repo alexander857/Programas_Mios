@@ -12,7 +12,7 @@ using namespace std;
 //informacion que tendra cada jugador
 struct infoPlayer{
 	string name;
-	int points, pointsFalse, ID;
+	int points, pointsFalse, machP, machW, machL, machE, ID;
 };
 
 typedef infoPlayer P;
@@ -105,6 +105,10 @@ void AddPlayers(){
                     cout << "Ingrese ID del jugador: "; getline(cin, aPlayer.name);
                     aPlayer.points = 0;
                     aPlayer.pointsFalse = 0;
+                    aPlayer.machP = 0;
+                    aPlayer.machW = 0;
+                    aPlayer.machL = 0;
+                    aPlayer.machE = 0;
                     aPlayer.ID = k + 1;
                     jornadas.insert(jornadas.end(), aPlayer); //guardando info para jornadas
                     k++;
@@ -122,6 +126,10 @@ void AddPlayers(){
                     cout << "Ingrese ID del jugador: "; getline(cin, aPlayer.name);
                     aPlayer.points = 0;
                     aPlayer.pointsFalse = 0;
+                    aPlayer.machP = 0;
+                    aPlayer.machW = 0;
+                    aPlayer.machL = 0;
+                    aPlayer.machE = 0;
                     aPlayer.ID = k + 1; //id del jugador
                     pairing.insert(pairing.end(), aPlayer); //guardando info para eliminatorias
                     k++;
@@ -139,6 +147,10 @@ void AddPlayers(){
                     cout << "Ingrese ID del jugador: "; getline(cin, aPlayer.name);
                     aPlayer.points = 0;
                     aPlayer.pointsFalse = 0;
+                    aPlayer.machP = 0;
+                    aPlayer.machW = 0;
+                    aPlayer.machL = 0;
+                    aPlayer.machE = 0;
                     aPlayer.ID = k + 1;
                     //para jornadas solo se guardan los primeros 20
                     if(k < 20) jornadas.insert(jornadas.end(), aPlayer); //guardando info para jornadas
@@ -166,13 +178,29 @@ void scoreTable(){
         cout << "\nTABLA DE PUNTUACIONES DE LAS JORNADAS\n";
 		cout << "\nJugadores			Puntos\n" << endl;
 		for(int i = 0; i < jornadas.size(); i++){
-            if(i < 3) cout << "\033[34m" << jornadas[i].name << "				" << jornadas[i].points << "\033[0m" << endl;
+            if(i < 3) 
+            {
+                cout << "\033[34m" << jornadas[i].name << "       MP: " << jornadas[i].machP << " W: " << jornadas[i].machW << " L: " 
+                << jornadas[i].machL << " E: " << jornadas[i].machE << " Pts: " << jornadas[i].points << "\033[0m" << endl;
+            }
                 
-			else if(i < 9) cout << "\033[33m" << jornadas[i].name << "				" << jornadas[i].points << "\033[0m" << endl;
+			else if(i < 9) 
+            {
+                cout << "\033[33m" << jornadas[i].name << "       MP: " << jornadas[i].machP << " W: " << jornadas[i].machW << " L: " 
+                << jornadas[i].machL << " E: " << jornadas[i].machE << " Pts: " << jornadas[i].points << "\033[0m" << endl;
+            }
                 
-            else if(i < 16) cout << "\033[32m" << jornadas[i].name << "				" << jornadas[i].points << "\033[0m" << endl;
+            else if(i < 16) 
+            {
+                 cout << "\033[32m" << jornadas[i].name << "       MP: " << jornadas[i].machP << " W: " << jornadas[i].machW << " L: " 
+                << jornadas[i].machL << " E: " << jornadas[i].machE << " Pts: " << jornadas[i].points << "\033[0m" << endl;
+            }
 
-            else if(i < 20) cout << "\033[31m" << jornadas[i].name << "				" << jornadas[i].points << "\033[0m" << endl;
+            else if(i < 20) 
+            {
+                 cout << "\033[31m" << jornadas[i].name << "       MP: " << jornadas[i].machP << " W: " << jornadas[i].machW << " L: " 
+                << jornadas[i].machL << " E: " << jornadas[i].machE << " Pts: " << jornadas[i].points << "\033[0m" << endl;
+            }
 		}
         cout << "\033[36m----------------------------------------------------------\033[0m" <<endl;
         cout << "\033[34m * \033[0m   Mejores Equipos de la Competencia" << endl;
@@ -224,7 +252,7 @@ void playRound(){
 
 	    //se verifica si se hizo ya el emparejamiento
     if(playOffPairing2 == false){
-        cout << "\nVISITE LA OPCION DE EMPAREJAMIENTO PRIMERO DE LIGA!" << endl;
+        cout << "\nVISITE LA OPCION DE EMPAREJAMIENTO DE LIGA PRIMERO!" << endl;
     }
 	else{
 
@@ -261,18 +289,32 @@ void playRound(){
                 //se busca jugador 1 en el vector original
                 for(auto iter = jornadas.begin(); iter != jornadas.end(); ++iter){
                     if(iter->ID == aux.ID){
-                        if(x > y) iter->points += 3;
-                        else if(x < y) iter->points += 0;
-                        else if(x == y) iter->points += 1;
+                        if(x > y) {
+                            iter->points += 3; iter->machW += 1; iter->machL += 0; iter->machE += 0; iter->machP += 1;
+                        }
+                        else if(x < y) {
+                            iter->points += 0; iter->machW += 0; iter->machL += 1; iter->machE += 0; iter->machP += 1;
+                        }
+                        else if(x == y) {
+                            iter->points += 1; iter->machW += 0; iter->machL += 0; iter->machE += 1; iter->machP += 1;
+                        }
+
                         break;
                     }
                 }
                 //se busca jugador 2 en el vector original
                 for(auto iter = jornadas.begin(); iter != jornadas.end(); ++iter){
                     if(iter->ID == aux2.ID){
-                        if(x < y) iter->points += 3;
-                        else if(x > y) iter->points += 0;
-                        else if(x == y) iter->points += 1;
+                        if(x < y) {
+                            iter->points += 3; iter->machW += 1; iter->machL += 0; iter->machE += 0; iter->machP += 1;
+                        }
+                        else if(x > y) {
+                            iter->points += 0; iter->machW += 0; iter->machL += 1; iter->machE += 0; iter->machP += 1;
+                        }
+                        else if(x == y) {
+                             iter->points += 1; iter->machW += 0; iter->machL += 0; iter->machE += 1; iter->machP += 1;
+                        }
+
                         break;
                     }
                 }
@@ -303,11 +345,11 @@ void playoff(){
 
     //se verifica si se hizo ya el emparejamiento
     if(playOffPairing == false){
-        cout << "\nVISITE LA OPCION DE EMPAREJAMIENTO PRIMERO DE CHAMPIONS LEAGUE!" << endl;
+        cout << "\nVISITE LA OPCION DE EMPAREJAMIENTO DE CHAMPIONS LEAGUE PRIMERO!" << endl;
     }
     else{
         if(removed == 1){
-            cout << "\nLAS ELIMINATORIAS TERMINARON, EL GANADOR DE LA CHAMPIOS LEAGUE ES:\n" << endl;
+            cout << "\nLAS ELIMINATORIAS TERMINARON, EL GANADOR DE LA CHAMPIONS LEAGUE ES:\n" << endl;
             sort(pairing.begin(), pairing.end(), ordenando);
 
             for(int i = 0; i < pairing.size(); i++){
@@ -529,6 +571,10 @@ void pairingProcess2(){
             aux.ID = jornadas[i].ID;
             aux.points = jornadas[i].points;
             aux.pointsFalse = jornadas[i].pointsFalse;
+            aux.machP = jornadas[i].machP;
+            aux.machW = jornadas[i].machW;
+            aux.machL = jornadas[i].machL;
+            aux.machE = jornadas[i].machE;
             pilaAssistant.push(aux); //se guarda la info del jugador en la pila auxiliar
      }
     
@@ -564,6 +610,10 @@ void removePlayer2(int n){
             aux.ID = iter->ID;
             aux.points = iter->points;
             aux.pointsFalse = iter->pointsFalse;
+            aux.machP = iter->machP;
+            aux.machW = iter->machW;
+            aux.machL = iter->machL;
+            aux.machE = iter->machE;
             iter = jornadas.erase(iter);
             break;
         }
