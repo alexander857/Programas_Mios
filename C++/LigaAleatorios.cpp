@@ -176,7 +176,7 @@ void scoreTable(){
 
 		sort(jornadas.begin(), jornadas.end(), ordenando);
         cout << "\nTABLA DE PUNTUACIONES DE LAS JORNADAS\n";
-		cout << "\nJugadores			Puntos\n" << endl;
+		cout << "\nJugadores\n" << endl;
 		for(int i = 0; i < jornadas.size(); i++){
             if(i < 3) 
             {
